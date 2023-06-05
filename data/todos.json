@@ -1,12 +1,20 @@
 {
-    "tasks": [
-        {
-            "id": "1",
-            "text": "Go to Gym"
-        },
-        {
-            "id": "2",
-            "text": "Attend a meeting regarding stocks with John at 8am"
-        }
-    ]
+  "tasks": [
+    {
+      "id": "2",
+      "text": "Attend a meeting regarding stocks with John at 8am"
+    },
+    {
+      "id": "3",
+      "text": "Call John"
+    },
+    {
+      "id": "76e153aa-461c-450c-a3ba-bfa965c48a6e",
+      "text": "go to market"
+    },
+    {
+      "id": "10ccad78-e7d5-468d-b1a4-9fdeca08cfae",
+      "text": "walking my cat"
+    }
+  ]
 }

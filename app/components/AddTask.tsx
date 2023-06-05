@@ -2,18 +2,27 @@
 import React, { FormEventHandler, useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import Modal from "./Modal";
+import { useRouter } from "next/navigation";
+import { addTodo } from "@/public/api";
+import { v4 as uuidv4 } from 'uuid';
 
 const AddTask = () => {
+  const router = useRouter();
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [newTaskValue, SetNewTaskValue] = useState<string>("");
 
-  const handleSubmitNewTodo: FormEventHandler<HTMLFormElement> = async e => {
+  const handleSubmitNewTodo: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
+    console.log(newTaskValue);
+    
     await addTodo({
-        id: 3,
-        text: newTaskValue
+      id: uuidv4(),
+      text: newTaskValue
     })
+    
     SetNewTaskValue("");
+    setModalOpen(false);
+    router.refresh();
   };
 
   return (
@@ -45,7 +54,5 @@ const AddTask = () => {
 };
 
 export default AddTask;
-function addTodo(arg0: { id: number; text: string; }) {
-    throw new Error("Function not implemented.");
-}
+
 
